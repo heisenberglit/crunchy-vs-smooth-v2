@@ -86,7 +86,7 @@ export default function Main({ voteAccount, voteAccountBump, network }) {
     // Construct usdc token class
 
     try {
-      var usdcMint = new web3.PublicKey("cK9rKpo5vTCa9KaeT5SWp4Rn123oDyt2nbopkjMUmzG");
+      var usdcMint = new web3.PublicKey("9unxwbn28wquNHkeM9c8fBL6dsaUQGfScZam8FvQxkdM");
       var usdcToken = new Token(
         connection,
         usdcMint,
