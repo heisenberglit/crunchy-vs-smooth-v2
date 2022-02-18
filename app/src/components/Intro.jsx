@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Link, Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/styles";
 import { WalletMultiButton } from "@solana/wallet-adapter-material-ui";
@@ -35,6 +35,7 @@ export default function Intro({
 }) {
   const wallet = useWallet();
   const classes = useStyles();
+
   return (
     <Box textAlign="center">
       <Typography
@@ -43,18 +44,10 @@ export default function Intro({
         gutterBottom
         className={classes.title}
       >
-        Crunchy or Smooth?
+       Airdrop Devnet USDC
       </Typography>
       <Typography variant="body1">
-        It's time to settle an age old debate: What is the best kind of peanut
-        butter?
-      </Typography>
-      <Typography variant="body1">
-        Cast your vote to the{" "}
-        <Link href="https://solana.com/" underline="always">
-          Solana
-        </Link>{" "}
-        blockchain and help decide this once and for all!
+      Click on Airdrop button it will airdrop 10k USDC to your wallet.
       </Typography>
       <Box marginTop="8px">
         {wallet.connected ? (
@@ -77,37 +70,7 @@ export default function Intro({
           }
         />
       </Box>
-      {(typeof votes.crunchy !== "number" ||
-        typeof votes.crunchy !== "number") &&
-        wallet.connected && (
-          <Box marginTop="8px">
-            <Typography variant="body1">
-              This{" "}
-              <Link
-                href={`https://explorer.solana.com/address/${programID.toString()}`}
-                underline="always"
-              >
-                program
-              </Link>
-              {"'s "}
-              <Link
-                href={`https://explorer.solana.com/address/${voteAccount?.toString()}`}
-                underline="always"
-              >
-                vote account
-              </Link>{" "}
-              has not been initialized yet:
-            </Typography>
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={initializeVoting}
-              className={classes.button}
-            >
-              Initialize Program
-            </Button>
-          </Box>
-        )}
+      
     </Box>
   );
 }
